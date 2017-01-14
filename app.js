@@ -4,6 +4,7 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 //================ MONGO DEPENDENCIES =================
+/*
 // 2. Database configuration
 // require mongojs, then save the url of our database 
 // as well as the name of our collection
@@ -18,8 +19,10 @@ var db = mongojs(databaseUrl); //, collections);
 db.on('error', function(err) {
     console.log('Database Error:', err);
 });
+*/
 
-//================ MONGOOSE DEPENDENCIES =================
+//================ MONGOOSE DEPENDENCIES & CONFIG=================
+
 var mongoose = require("mongoose");
 // Mongoose mpromise deprecated - use bluebird promises
 var Promise = require("bluebird");
@@ -30,18 +33,15 @@ mongoose.Promise = Promise;
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_c4cn3tc7:9g9kql0f983sjdpergjggisea7@ds111489.mlab.com:11489/heroku_c4cn3tc7");
+mongoose.connect("mongodb://localhost/MedDoc", function(err) {
+    if (err) {
+        console.log('Failed connectiong to Mongodb')
+    } else {
+        console.log("Mongoose connection successful.");
+    }
+});
+//"mongodb://heroku_c4cn3tc7:9g9kql0f983sjdpergjggisea7@ds111489.mlab.com:11489/heroku_c4cn3tc7"
 var db = mongoose.connection;
-
-// Show any mongoose errors
-db.on("error", function(error) {
-    console.log("Mongoose Error: ", error);
-});
-
-// Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
-    console.log("Mongoose connection successful.");
-});
 
 
 
