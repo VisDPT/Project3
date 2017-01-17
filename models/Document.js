@@ -109,7 +109,7 @@ var DocumentSchema = new Schema({
 
 
 
-module.exports = mongoose.model('Provider', ProviderSchema);
+module.exports = mongoose.model('Document', DocumentSchema);
 
 /*
 // Create the "User" model with our UserSchema schema

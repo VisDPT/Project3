@@ -20,7 +20,7 @@ app.use(express.static("public"));
 
 //================ REQUIRING FILES/MODELS =================
 var Provider = require("./models/Provider.js");
-//var Document = require("./models/Document.js");
+var Document = require("./models/Document.js");
 
 //================ MONGO DEPENDENCIES =================
 /*
