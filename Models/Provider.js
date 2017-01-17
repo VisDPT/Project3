@@ -1,12 +1,22 @@
 // Require mongoose
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 // Create Schema class
 var Schema = mongoose.Schema;
 
 
-// Create article schema
 var ProviderSchema = new Schema({
-    // title is a required string
+
+    providerID: {
+        type: Number,
+        unique: true,
+        required: "Enter your TX license number.",
+        validate: [
+            function(input) {
+                return input.length = 7;
+            },
+            "Enter a valid TX license number."
+        ]
+    },
     name: {
         type: String,
         required: true
@@ -17,9 +27,26 @@ var ProviderSchema = new Schema({
         required: true
     },
 
+    email: {
+        type: String,
+        unique: true,
+        required: "Email is Required",
+        match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
+    },
+    password: {
+        type: String,
+        // trim: true,
+        required: "Password is Required",
+        validate: [
+            function(input) {
+                return input.length >= 6;
+            },
+            "Password should be longer"
+        ]
+    },
     phone: {
         type: Number,
-        required: true,
+        required: "Enter Phone number",
         validate: [
             function(input) {
                 return input.length = 10;
@@ -27,35 +54,25 @@ var ProviderSchema = new Schema({
             "Enter Valid Phone Number."
         ]
     },
-
-    email: {
-        type: String,
-        unique: true,
-        required: true, //??????
-        match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
-    },
-
-    password: {
-        type: String,
-        trim: true,
-        required: "Password is Required",
-        validate: [
-            function(input) {
-                return input.length >= 6;
-            },
-            "Password should be longer."
-        ]
-    },
-
     userCreated: {
         type: Date,
         default: Date.now
+
     }
+    /*,
+        documents: [{
+            type: Schema.Types.ObjectId,
+            ref: "Document"
+        }]
+    */
 });
 
 
-// Create the "User" model with our UserSchema schema
-var Provider = mongoose.model("Provider", ProviderSchema);
+module.exports = mongoose.model('Provider', ProviderSchema);
 
+/*
+// creates our provider model from above schema
+var Provider = mongoose.model("Provider", ProviderSchema);
 // Export the User model, so it can be used in server.js with a require
-module.exports = Provider;
+module.exports = Provider;   
+*/
