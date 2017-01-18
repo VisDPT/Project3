@@ -9,7 +9,7 @@ var DocumentSchema = new Schema({
     // title is a required string
     patientID: {
         type: Number,
-        unique: true,
+        //        unique: true,
         required: "Enter your Patient ID.",
         validate: [
             function(input) {

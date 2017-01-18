@@ -58,13 +58,12 @@ var ProviderSchema = new Schema({
         type: Date,
         default: Date.now
 
-    }
-    /*,
-        documents: [{
-            type: Schema.Types.ObjectId,
-            ref: "Document"
-        }]
-    */
+    },
+    documents: [{
+        type: Schema.Types.ObjectId,
+        ref: "Document"
+    }]
+
 });
 
 
