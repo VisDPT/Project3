@@ -1,0 +1,12 @@
+Seeds
+
+PROVIDERS:
+
+db.providers.insert({providerID: 1234567, name:"Jo Jo", position:"School PT", phone: 1234567890, email:"JJ@gmail.com", password:"abcdef"})
+
+
+DOCUMENT:
+db.documents.insert({patientID: 1238567, providerID: "1238567", providerName: "Jo lJo", specialty: "PT", setting: "school", doctype: "annual IEP", patientName: "Bob b", DOB: "01/5/1990", ROM: "Lknee= 80 deg", MMT: "LKnee= 5/5" })
+
+
+

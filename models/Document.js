@@ -71,23 +71,14 @@ var DocumentSchema = new Schema({
         default: Date.now
     },
 
-    //embedded Sub document
-    Subj: {
-        patientHX: String,
-        instructorConcerns: String,
-        generalResponse: String,
-
-
-    },
-    //embedded Sub document
-    Obs: {
-
-        ROM: String,
-        toneMC: String,
-        functionalStrength: String,
-        MMT: String,
-        standardizedTests: String,
-    },
+    patientHX: String,
+    instructorConcerns: String,
+    generalResponse: String,
+    ROM: String,
+    toneMC: String,
+    functionalStrength: String,
+    MMT: String,
+    standardizedTests: String,
 
     Assessment: {
         type: String,
@@ -102,8 +93,6 @@ var DocumentSchema = new Schema({
         LTG: String,
 
     }
-
-
 });
 
 
@@ -117,3 +106,20 @@ var Document = mongoose.model("Document", DocumentSchema);
 
 // Export the User model, so it can be used in server.js with a require
 module.exports = Document;  */
+
+
+/*
+    //embedded Sub document
+    Subj: {
+        patientHX: String,
+        instructorConcerns: String,
+        generalResponse: String,
+    },
+    //embedded Sub document
+    Obs: {
+        ROM: String,
+        toneMC: String,
+        functionalStrength: String,
+        MMT: String,
+        standardizedTests: String,
+    }, */
