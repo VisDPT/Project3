@@ -1,3 +1,7 @@
+//npm install --save @blueprintjs/core
+
+
+
 //==================== SERVER ========================
 var express = require('express');
 var PORT = process.env.PORT || 8080;
@@ -21,7 +25,7 @@ app.use(express.static("public"));
 //================ REQUIRING FILES/MODELS =================
 var Provider = require("./models/Provider.js");
 var Document = require("./models/Document.js");
-
+var Patient = require("./models/Patient.js");
 //================ MONGO DEPENDENCIES =================
 /*
 // 2. Database configuration
@@ -68,14 +72,15 @@ db.once("open", function() {
 
 
 
-
-
+//======================== REACT ========================
+var React = require('react');
+var ReactDOM = require('react-dom');
 
 
 //========================== ROUTES =============================
 //HOME PAGE with logo
 app.get('/', function(req, res) {
-    res.send('HOME PAGE');
+    res.send('HOME PAGE with logo');
     /*
 // THIS SEARCH WORKS!
         Provider.find({})
@@ -96,7 +101,21 @@ app.get('/login/', function(req, res) {
 
 //Dashoard page after login which displays list of patients; phase 2 your patients
 app.get('/user/home/', function(req, res) {
-    res.send('YOU LOGGED IN! Here is your dashboard ');
+    //res.send('YOU LOGGED IN! Here is your dashboard ');
+    // Set up a query to find all of the entries in our Library..
+    Provider.find({})
+        .populate("documents") //what field do we want populated; populate goes and fetches the data
+        // Now, execute that query
+        .exec(function(error, doc) { //let this run and attach a callback
+            // Send any errors to the browser
+            if (error) {
+                res.send(error);
+            }
+            // Or, send our results to the browser, which will now include the documents stored in the Provider
+            else {
+                res.send(doc);
+            }
+        });
 
 
 });

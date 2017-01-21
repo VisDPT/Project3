@@ -4,51 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
-    <style>
-        body {
-            background-color: greenyellow;
-        }
-        
-        #wrapper {
-            width: 960px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 5%;
-        }
-        
-        #articles {
-            display: inline-block;
-            overflow: auto;
-            width: 60%;
-            height: 700px;
-        }
-        
-        #notes {
-            float: right;
-            width: 30%;
-        }
-        
-        textarea,
-        input {
-            display: block;
-            width: 100%;
-            background-color: greenyellow;
-        }
-        
-        input {
-            height: 36px;
-            font-size: 24px;
-        }
-        
-        textarea {
-            height: 200px;
-            font-size: 18px;
-        }
-    </style>
+    <link href="view/css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <div id="wrapper">
+
+        <nav class="pt-navbar .modifier">
+            <div class="pt-navbar-group pt-align-left">
+                <div class="pt-navbar-heading">Blueprint</div>
+                <input class="pt-input" placeholder="Search files..." type="text" />
+            </div>
+            <div class="pt-navbar-group pt-align-right">
+                <button class="pt-button pt-minimal pt-icon-home">Home</button>
+                <button class="pt-button pt-minimal pt-icon-document">Files</button>
+                <span class="pt-navbar-divider"></span>
+                <button class="pt-button pt-minimal pt-icon-user"></button>
+                <button class="pt-button pt-minimal pt-icon-notifications"></button>
+                <button class="pt-button pt-minimal pt-icon-cog"></button>
+            </div>
+        </nav>
+
         <h1>COLLABORATE (PEDS)</h1>
         <h2><i>A Place where PTs, OTs, and STs from all settings collaborate.</i></h2>
         <div id="articles"></div>

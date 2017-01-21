@@ -7,6 +7,12 @@ var Schema = mongoose.Schema;
 // Create article schema
 var DocumentSchema = new Schema({
     // title is a required string
+    documentID: {
+        type: Number,
+        unique: true,
+        required: "Enter your TX license number.",
+
+    },
     patientID: {
         type: Number,
         //        unique: true,
@@ -17,7 +23,10 @@ var DocumentSchema = new Schema({
             },
             "Enter your Patient ID."
         ]
-
+    },
+    patientName: {
+        type: String,
+        required: true
     },
 
     providerID: {
@@ -33,6 +42,7 @@ var DocumentSchema = new Schema({
         type: String,
         required: true
     },
+
     setting: { //acute, OP, school & PT, OT, School based
         type: String,
         required: true
@@ -43,10 +53,7 @@ var DocumentSchema = new Schema({
         required: true
     },
 
-    patientName: {
-        type: String,
-        required: true
-    },
+
 
     DOB: {
         type: String,
@@ -61,10 +68,6 @@ var DocumentSchema = new Schema({
         type: String,
     },
 
-    age: {
-        type: Number,
-        required: true
-    },
 
     docCreated: {
         type: Date,
@@ -94,7 +97,6 @@ var DocumentSchema = new Schema({
 
     }
 });
-
 
 
 

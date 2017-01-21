@@ -17,7 +17,7 @@ var ProviderSchema = new Schema({
             "Enter a valid TX license number."
         ]
     },
-    name: {
+    providerName: {
         type: String,
         required: true
     },
@@ -62,6 +62,11 @@ var ProviderSchema = new Schema({
     documents: [{
         type: Schema.Types.ObjectId,
         ref: "Document"
+    }],
+
+    patients: [{
+        type: Schema.Types.ObjectId,
+        ref: "Patient"
     }]
 
 });
