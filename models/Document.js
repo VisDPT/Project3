@@ -10,7 +10,7 @@ var DocumentSchema = new Schema({
     documentID: {
         type: Number,
         unique: true,
-        required: "Enter your TX license number.",
+        required: "Enter a valid document ID.",
 
     },
     patientID: {
@@ -55,7 +55,7 @@ var DocumentSchema = new Schema({
 
 
 
-    DOB: {
+    dateOfBirth: {
         type: String,
         required: true
     },
@@ -77,13 +77,13 @@ var DocumentSchema = new Schema({
     patientHX: String,
     instructorConcerns: String,
     generalResponse: String,
-    ROM: String,
+    rangeOfMotion: String,
     toneMC: String,
     functionalStrength: String,
-    MMT: String,
+    manualMuscleTesting: String,
     standardizedTests: String,
 
-    Assessment: {
+    assessment: {
         type: String,
     },
 

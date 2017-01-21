@@ -14,8 +14,10 @@ var logger = require("morgan"); //writes logs everything that has happened to th
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));
+
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 }));
 
 // Make public a static dir
@@ -77,8 +79,11 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 
-//========================== ROUTES =============================
-//HOME PAGE with logo
+//=========================================================
+//                        ROUTES 
+//=========================================================
+
+//*********** HOME PAGE with logo ***********
 app.get('/', function(req, res) {
     res.send('HOME PAGE with logo');
     /*
@@ -94,53 +99,83 @@ app.get('/', function(req, res) {
             })   */
 });
 
-//log in page
+//*********** LOG IN **************
 app.get('/login/', function(req, res) {
     res.send('LOGIN PAGE');
 });
 
-//Dashoard page after login which displays list of patients; phase 2 your patients
+//********** Dashoard page after login **************
+//(which displays list of ALL patients;)
 app.get('/user/home/', function(req, res) {
     //res.send('YOU LOGGED IN! Here is your dashboard ');
-    // Set up a query to find all of the entries in our Library..
-    Provider.find({})
-        .populate("documents") //what field do we want populated; populate goes and fetches the data
-        // Now, execute that query
-        .exec(function(error, doc) { //let this run and attach a callback
-            // Send any errors to the browser
+    Patient.find({})
+        .populate("documents") 
+        .exec(function(error, doc) { 
             if (error) {
                 res.send(error);
             }
-            // Or, send our results to the browser, which will now include the documents stored in the Provider
             else {
                 res.send(doc);
             }
         });
-
-
 });
 
-//See all docs for 1 patient
+//********** See all docs for 1 patient **************
 app.get('/user/docs/:patientid', function(req, res) {
     res.send('HERE ARE ALL THE DOCUMENTS for Patient X!');
 });
 
-//Create New Doc for Patient
-app.post('/user/newdoc/', function(req, res) {
-    res.send('CREATE NEW DOC!!!');
-});
-
-//GETS SPECIFIC PT DOC
+//********** GETS SPECIFIC PT DOC  **************
 app.get('/user/:documentid/', function(req, res) {
     res.send('GETS SPECIFIC PT DOC!!');
 });
 
-//DELETES YOUR SPECIFIC PT DOC
+
+//********** NEW DOC  **************
+app.post('/user/newdoc/', function(req, res) {
+    //res.send('CREATE NEW DOC!!!');
+    var newDocument = new Document();
+
+    newDocument.documentID =req.body.documentID;
+    newDocument.patientID =req.body.patientID;
+    newDocument.patientName =req.body.patientName;
+    newDocument.providerID = req.body.provider;
+    newDocument.providerName = req.body.providerName;
+    newDocument.specialty = req.body.specialty;
+    newDocument.setting = req.body.setting;
+    newDocument.doctype = req.body.doctype;
+    newDocument.dateOfBirth = req.body.dateOfBirth; 
+    newDocument.age = req.body.age;
+    newDocument.chronologicalAge= req.body.chronologicalAge;
+    newDocument.docCreated = req.body.docCreated;
+    newDocument.patientHX =req.body.patientHX;
+    newDocument.instructorConcerns = req.body.instructorConcerns;
+    newDocument.generalResponse = req.body.generalResponse;
+    newDocument.rangeOfMotion = req.body.rangeOfMotion;
+    newDocument.toneMC =req.body.toneMC;
+    newDocument.functionalStrength = req.body.functionalStrength;
+    newDocument.manualMuscleTesting = req.body.manuelMuscletesting;
+    newDocument.standardizedTests = req.body.standardizedTests;
+    newDocument.Plan = req.body.Plan;
+    newDocument.goals = req.body.goals;   
+
+    newDocument.save(function(err, document){
+        if(err) {
+            res.send(err);
+        } else{
+            console.log(document);
+            res.send(document);
+        }
+    })
+});
+
+
+//********** DELETES PT DOC  **************
 app.delete('/user/:documentid/', function(req, res) {
     res.send('DELETES SPECIFIC PT DOC!!');
 });
 
-//update YOUR SPECIFIC PT DOC
+//********** UPDATE DOC  **************
 app.put('/user/:documentid/', function(req, res) {
     res.send('UPDATES SPECIFIC PT DOC!!');
 });
