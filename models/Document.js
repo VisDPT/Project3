@@ -53,8 +53,6 @@ var DocumentSchema = new Schema({
         required: true
     },
 
-
-
     dateOfBirth: {
         type: String,
         required: true
@@ -68,12 +66,32 @@ var DocumentSchema = new Schema({
         type: String,
     },
 
+    /*   phone: {
+           type: Number,
+           required: "Enter Phone number",
+           validate: [
+               function(input) {
+                   return input.length = 10;
+               },
+               "Enter Valid Phone Number."
+           ]
+       },
 
-    docCreated: {
-        type: Date,
-        default: Date.now
+       address: {
+           type: String,
+       },
+       email: {
+           type: String,
+           unique: true,
+           required: "Email is Required",
+           match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
+       }, */
+
+
+    diagnosis: {
+        type: String,
+        required: true
     },
-
     patientHX: String,
     instructorConcerns: String,
     generalResponse: String,
@@ -87,41 +105,21 @@ var DocumentSchema = new Schema({
         type: String,
     },
 
-    Plan: {
+    plan: {
         type: String,
     },
 
-    goals: {
-        STG: String,
-        LTG: String,
 
+    STG: String,
+    LTG: String,
+
+
+    docCreated: {
+        type: Date,
+        default: Date.now
     }
 });
 
 
 
 module.exports = mongoose.model('Document', DocumentSchema);
-
-/*
-// Create the "User" model with our UserSchema schema
-var Document = mongoose.model("Document", DocumentSchema);
-
-// Export the User model, so it can be used in server.js with a require
-module.exports = Document;  */
-
-
-/*
-    //embedded Sub document
-    Subj: {
-        patientHX: String,
-        instructorConcerns: String,
-        generalResponse: String,
-    },
-    //embedded Sub document
-    Obs: {
-        ROM: String,
-        toneMC: String,
-        functionalStrength: String,
-        MMT: String,
-        standardizedTests: String,
-    }, */

@@ -25,7 +25,6 @@ var PatientSchema = new Schema({
 
     address: {
         type: String,
-        required: true
     },
 
     phone: {
@@ -46,13 +45,10 @@ var PatientSchema = new Schema({
     },
     diagnosis: {
         type: String,
-    },
-    patientName: {
-        type: String,
         required: true
     },
 
-    DOB: {
+    dateOfBirth: {
         type: String,
         required: true
     },
