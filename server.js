@@ -28,23 +28,6 @@ app.use(express.static("public"));
 var Provider = require("./models/Provider.js");
 var Document = require("./models/Document.js");
 var Patient = require("./models/Patient.js");
-//================ MONGO DEPENDENCIES =================
-/*
-// 2. Database configuration
-// require mongojs, then save the url of our database 
-// as well as the name of our collection
-var mongojs = require('mongojs');
-var databaseUrl = "MedDoc";
-//var collections = ["animals"];
-
-// use mongojs to hook the database to the db variable 
-var db = mongojs(databaseUrl); //, collections);
-
-// this makes sure that any errors are logged if mongodb runs into an issue
-db.on('error', function(err) {
-    console.log('Database Error:', err);
-});
-*/
 
 //================ MONGOOSE DEPENDENCIES & CONFIG=================
 
@@ -78,14 +61,32 @@ db.once("open", function() {
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+//webpack
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpack = require('webpack');
+var webpackConfig = require('./webpack.config.js');
+
+var compiler = webpack(webpackConfig);
+
+app.use(webpackDevMiddleware(compiler, {
+  hot: true,
+  filename: 'bundle.js',
+  publicPath: '/',
+  stats: {
+    colors: true,
+  },
+  historyApiFallback: true,
+}));
+
 
 //=========================================================
 //                        ROUTES 
 //=========================================================
-
+//app.use(express.static(__dirname + '/www'));
 //*********** HOME PAGE with logo ***********
 app.get('/', function(req, res) {
-    res.send('HOME PAGE with logo');
+//    res.send('HOME PAGE with logo');
+    res.sendFile(__dirname + "/public/view/index.html");
     /*
 // THIS SEARCH WORKS!
         Provider.find({})

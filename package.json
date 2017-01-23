@@ -4,6 +4,8 @@
   "description": "Documentation system",
   "main": "app.js",
   "scripts": {
+    "compile": "webpack",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +31,7 @@
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-dom": "^15.4.2",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0"
   }
 }
