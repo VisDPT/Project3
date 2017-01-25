@@ -4,7 +4,7 @@
 
 //==================== SERVER ========================
 var express = require('express');
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8000;
 var app = express();
 
 //body parser
@@ -28,6 +28,7 @@ app.use(express.static("public"));
 var Provider = require("./models/Provider.js");
 var Document = require("./models/Document.js");
 var Patient = require("./models/Patient.js");
+
 
 //================ MONGOOSE DEPENDENCIES & CONFIG=================
 
@@ -69,14 +70,20 @@ var webpackConfig = require('./webpack.config.js');
 var compiler = webpack(webpackConfig);
 
 app.use(webpackDevMiddleware(compiler, {
-  hot: true,
-  filename: 'bundle.js',
-  publicPath: '/',
-  stats: {
-    colors: true,
-  },
-  historyApiFallback: true,
+    hot: true,
+    filename: 'bundle.js',
+    publicPath: '/',
+    stats: {
+        colors: true,
+    },
+    historyApiFallback: true,
 }));
+
+//CLASS NPM PACKAGE
+require("babel-core").transform("code", {
+    plugins: ["transform-class-properties"]
+});
+
 
 
 //=========================================================
@@ -85,7 +92,7 @@ app.use(webpackDevMiddleware(compiler, {
 //app.use(express.static(__dirname + '/www'));
 //*********** HOME PAGE with logo ***********
 app.get('/', function(req, res) {
-//    res.send('HOME PAGE with logo');
+    //    res.send('HOME PAGE with logo');
     res.sendFile(__dirname + "/public/view/index.html");
     /*
 // THIS SEARCH WORKS!
@@ -110,12 +117,11 @@ app.get('/login/', function(req, res) {
 app.get('/user/home/', function(req, res) {
     //res.send('YOU LOGGED IN! Here is your dashboard ');
     Patient.find({})
-        .populate("documents") 
-        .exec(function(error, doc) { 
+        .populate("documents")
+        .exec(function(error, doc) {
             if (error) {
                 res.send(error);
-            }
-            else {
+            } else {
                 res.send(doc);
             }
         });
@@ -137,62 +143,63 @@ app.post('/user/newdoc/', function(req, res) {
     //res.send('CREATE NEW DOC!!!');
     var newDocument = new Document();
 
-    newDocument.documentID =req.body.documentID;
-    newDocument.patientID =req.body.patientID;
-    newDocument.patientName =req.body.patientName;
+    newDocument.documentID = req.body.documentID;
+    newDocument.patientID = req.body.patientID;
+    newDocument.patientName = req.body.patientName;
     newDocument.providerID = req.body.provider;
     newDocument.providerName = req.body.providerName;
     newDocument.specialty = req.body.specialty;
     newDocument.setting = req.body.setting;
     newDocument.doctype = req.body.doctype;
-    newDocument.dateOfBirth = req.body.dateOfBirth;newDocument.age = req.body.age;
-    newDocument.chronologicalAge= req.body.chronologicalAge;
+    newDocument.dateOfBirth = req.body.dateOfBirth;
+    newDocument.age = req.body.age;
+    newDocument.chronologicalAge = req.body.chronologicalAge;
 
 
-//  newDocument.phone = req.body.phone;
-//   newDocument.address = req.body.address;
-//   newDocument.email = req.body.email;
+    //  newDocument.phone = req.body.phone;
+    //   newDocument.address = req.body.address;
+    //   newDocument.email = req.body.email;
     newDocument.diagnosis = req.body.diagnosis;
-    newDocument.patientHX =req.body.patientHX;
+    newDocument.patientHX = req.body.patientHX;
     newDocument.instructorConcerns = req.body.instructorConcerns;
     newDocument.generalResponse = req.body.generalResponse;
     newDocument.rangeOfMotion = req.body.rangeOfMotion;
-    newDocument.toneMC =req.body.toneMC;
+    newDocument.toneMC = req.body.toneMC;
     newDocument.functionalStrength = req.body.functionalStrength;
     newDocument.manualMuscleTesting = req.body.manualMuscletesting;
     newDocument.standardizedTests = req.body.standardizedTests;
     newDocument.assessment = req.body.assessment;
     newDocument.plan = req.body.plan;
-    newDocument.STG = req.body.STG;   
+    newDocument.STG = req.body.STG;
     newDocument.LTG = req.body.LTG;
     newDocument.docCreated = req.body.docCreated;
 
-    newDocument.save(function(err, document){
-        if(err) {
+    newDocument.save(function(err, document) {
+        if (err) {
             res.send(err);
-        } else{
+        } else {
             console.log(document);
             res.send(document);
         }
     })
 
 
-var newPatient = new Patient();
+    var newPatient = new Patient();
 
-    newPatient.patientID =req.body.patientID;
-    newPatient.patientName =req.body.patientName;
- newPatient.address = req.body.address;
-     newPatient.phone = req.body.phone;
- newPatient.email = req.body.email;
- newPatient.diagnosis = req.body.diagnosis;
-    newPatient.dateOfBirth = req.body.dateOfBirth; 
+    newPatient.patientID = req.body.patientID;
+    newPatient.patientName = req.body.patientName;
+    newPatient.address = req.body.address;
+    newPatient.phone = req.body.phone;
+    newPatient.email = req.body.email;
+    newPatient.diagnosis = req.body.diagnosis;
+    newPatient.dateOfBirth = req.body.dateOfBirth;
     newPatient.age = req.body.age;
-    newPatient.chronologicalAge= req.body.chronologicalAge;
+    newPatient.chronologicalAge = req.body.chronologicalAge;
 
-    newPatient.save(function(err, patient){
-        if(err) {
+    newPatient.save(function(err, patient) {
+        if (err) {
             res.send(err);
-        } else{
+        } else {
             console.log(patient);
             res.send(patient);
         }

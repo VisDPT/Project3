@@ -6,19 +6,27 @@
     <title> COLLABORATE </title>
     <link href="view/css/style.css" rel="stylesheet">
     <!-- include Blueprint dependencies manually -->
-    <link href="/node_modules/normalize.css/normalize.css" rel="stylesheet" />
-    <link href="/node_modules/@blueprintjs/core/dist/blueprint.css" rel="stylesheet" />
+
+    <!-- Here we include bootstrap. This will be made available to all of the generated HTML/JS that React generates-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!--
+    <link href="/public/nodemodules/normalize.css/normalize.css" rel="stylesheet" />
+    <link href="/public/nodemodules/@blueprintjs/core/dist/blueprint.css" rel="stylesheet" />
+
+-->
 
 
-    <script src="/bundle.js"></script>
+
 </head>
 
 <body>
 
+    <!-- This is where React will deploy the contents it generates -->
     <div id="root"></div>
 
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-    <script src="app.js"></script>
+    <!-- All of our JS code will be transpiled into this bundle.js file -->
+    <script src="bundle.js"></script>
+
 </body>
 
 </html>

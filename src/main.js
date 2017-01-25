@@ -1,13 +1,9 @@
-console.log('COLLABORATE');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
 
-document.addEventListener('DOMContentLoaded', function() {
-    ReactDOM.render(
-        // alt way       React.createElement(Counter),
-        <Navbar />,
-        document.getElementById('root')
-    );
-});
+ReactDOM.render(
+//<p> collaborate </p>,
+	<Navbar />,
+	document.getElementById('root')
+)
