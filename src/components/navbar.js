@@ -10,25 +10,43 @@ var Navbar = React.createClass({
 render: function(){
 
 		return(
-			<h1>Collaborate!!</h1>
-		)
+
+<div className="container">
+
+    <nav id="mainNav" className="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div className="container">
+            <div className="navbar-header page-scroll">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span className="sr-only">Toggle navigation</span> Menu <i className="fa fa-bars"></i>
+                </button>
+                <a className="navbar-brand" href="#page-top">Start Bootstrap</a>
+            </div>
+            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul className="nav navbar-nav navbar-right">
+                    <li className="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li className="page-scroll">
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li className="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li className="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+     
+        </div>
+    </nav>
+
+      
+   
+   </div> 
+      	)
 	}
 });
 
 // Export the componen back for use in other files
 module.exports = Navbar; 
-/*
-<nav className="pt-navbar .modifier">
-  <div className="pt-navbar-group pt-align-left">
-    <div className="pt-navbar-heading">Blueprint</div>
-    <input className="pt-input" placeholder="Search files..." type="text" />
-  </div>
-  <div className="pt-navbar-group pt-align-right">
-    <button className="pt-button pt-minimal pt-icon-home">Home</button>
-    <button className="pt-button pt-minimal pt-icon-document">Files</button>
-    <span className="pt-navbar-divider"></span>
-    <button className="pt-button pt-minimal pt-icon-user"></button>
-    <button className="pt-button pt-minimal pt-icon-notifications"></button>
-    <button className="pt-button pt-minimal pt-icon-cog"></button>
-  </div>
-</nav> */
