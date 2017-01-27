@@ -1,6 +1,5 @@
 # Project3
-Documentation system
-
+A super basic EMR extension for pediatric physical therapists, occupational therapists, speech therapists, and other support staff from various pediatric settings that allow for efficient and easy COLLABORATION through documentation.
 
 js
 My Project
