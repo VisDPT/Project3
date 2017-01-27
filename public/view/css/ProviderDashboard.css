@@ -1,53 +1,73 @@
-            body {
-                background-image: url('../img/background4.jpg');
-                background-size: cover;
-            }
-            /* ============  NAVBAR  ============  */
-            
-            #mainNav {
-                background-color: black;
-                color: whitesmoke
-            }
-            
-            #navTitle {
-                text-transform: uppercase;
-                /* text-shadow: 5px 2px skyblue; */
-                color: white;
-                font-size: 30px;
-                /* margin: 7%;*/
-                font-family: 'Acme', sans-serif;
-            }
-            
-            #navTitle:hover {
-                font-size: 30px;
-            }
-            
-            .rightNav {
-                font-size: 18px;
-                font-family: 'Acme', sans-serif;
-                color: white;
-            }
-            
-            .rightNav:hover {
-                font-family: 'Acme', sans-serif;
-                border: 5px solid whitesmoke;
-                border-bottom-color: yellow;
-                border-right-color: pink;
-                border-left-color: blue;
-                border-top-color: green;
-                background-color: #191919;
-            }
-            /* Provider Dashboard*/
-            
-            #title {
-                margin-top: 9%;
-                text-align: center;
-                text-transform: uppercase;
-                color: black;
-                text-shadow: 5px 2px #3CC;
-                font-family: 'Luckiest Guy', cursive;
-                font-size: 120px;
-                /*                -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-                -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
-            }
+body {
+    background-image: url('../img/background4.jpg');
+    background-size: cover;
+}
+
+
+/* ============  NAVBAR  ============  */
+
+#mainNav {
+    background-color: black;
+    color: whitesmoke
+}
+
+#navTitle {
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+    font-family: 'Acme', sans-serif;
+}
+
+#navTitle:hover {
+    font-size: 30px;
+}
+
+.rightNav {
+    font-size: 18px;
+    font-family: 'Acme', sans-serif;
+    color: white;
+}
+
+.rightNav:hover {
+    font-family: 'Acme', sans-serif;
+    border: 5px solid whitesmoke;
+    border-bottom-color: yellow;
+    border-right-color: pink;
+    border-left-color: blue;
+    border-top-color: green;
+    background-color: #191919;
+}
+
+
+/* Provider Dashboard*/
+
+#title {
+    margin-top: 9%;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    text-shadow: 5px 2px #3CC;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 120px;
+}
+
+
+/* Your Dashboard */
+
+#subtitle {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.boxColor {
+    background-color: white;
+    opacity: 0.9;
+    border-width: 5px;
+    border-style: groove;
+    border-color: darkslategrey;
+    font-weight: 900;
+    height: 300px;
+    overflow: scroll;
+}
