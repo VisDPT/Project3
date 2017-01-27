@@ -20,17 +20,26 @@
  }
  
  #login-register {
-     color: #7FFF00;
-     font-size: 20px;
-     /* margin: 5%; */
+     font-size: 18px;
      font-family: 'Acme', sans-serif;
+     border: 5px solid white;
+     border-top-color: yellow;
+     border-left-color: pink;
+     border-right-color: blue;
+     border-bottom-color: green;
+     color: #00FFFF;
  }
  
  #login-register:hover {
-     color: greenyellow;
      /*font-size: 20px;
      margin: 5%; */
      font-family: 'Acme', sans-serif;
+     border: 5px solid whitesmoke;
+     border-bottom-color: yellow;
+     border-right-color: pink;
+     border-left-color: blue;
+     border-top-color: green;
+     background-color: #191919;
  }
  /* ============  LANDING PAGE  ============ */
  
