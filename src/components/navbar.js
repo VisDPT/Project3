@@ -17,11 +17,11 @@ render: function(){
 <nav className="navbar navbar-inverse">
   <div className="container-fluid">
     <div className="navbar-header">
-      <a className="navbar-brand" href="#">COLLABORATE</a>
+      <a className="navbar-brand" href="#" id="navTitle">COLLABORATE</a>
     </div>
 
     <ul className="nav navbar-nav navbar-right">
-      <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up/LogIn</a></li>
+      <li> <a href="#" id="login-register">Sign Up/ LogIn</a></li>
       
     </ul>
   </div>

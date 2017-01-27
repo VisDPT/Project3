@@ -12,7 +12,7 @@ var LandingPic = React.createClass({
 	render: function(){
 
 		return(
-			<img src={'http://keystonemedicine.com/wp-content/uploads/2016/06/Pediatrics.jpg'} alt="boohoo" className="img-responsive"/>
+			<img src={'http://keystonemedicine.com/wp-content/uploads/2016/06/Pediatrics.jpg'} alt="boohoo" className="img-responsive" id="baby"/>
 		)
 	}
 });

@@ -26,7 +26,7 @@ render: function(){
 
                      
 <img src={'http://keystonemedicine.com/wp-content/uploads/2016/06/Pediatrics.jpg'} alt="boohoo" className="img-responsive" id="baby" />
-                        <p id="descrip"> A place where pediatric physical therapists, occupational therapists, speech therapists, and other support staff from various pediatric settings come to COLLABORATE via their documentation! </p>
+                        <p id="descrip">  An EMR extension for pediatric physical therapists, occupational therapists, speech therapists, and other support staff from various pediatric settings that allow for efficient and easy COLLABORATION through documentation.  </p>
                     
                    
                  </div>
