@@ -25,7 +25,7 @@
         input {
             display: block;
             width: 100%;
-            background-color: greenyellow;
+            background-color: lightgrey;
         }
         
         input {
@@ -36,4 +36,16 @@
         textarea {
             height: 200px;
             font-size: 18px;
+        }
+        
+        #mainNav {
+            background-color: black;
+            color: white
+        }
+        /* ====  Landing Page  === */
+        
+        #title {
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 3px 2px lightskyblue;
         }

@@ -22,7 +22,12 @@ var ProviderSchema = new Schema({
         required: true
     },
 
-    position: {
+    specialty: { // PT, OT, ST
+        type: String,
+        required: true
+    },
+
+    setting: { //acute, OP, school & PT, OT, School based
         type: String,
         required: true
     },
