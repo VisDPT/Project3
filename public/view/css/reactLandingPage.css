@@ -10,20 +10,33 @@
      /* text-shadow: 5px 2px skyblue; */
      color: white;
      font-size: 30px;
-     margin: 7%;
+     /*
+     margin: 7%;*/
      font-family: 'Acme', sans-serif;
  }
  
+ #navTitle:hover {
+     font-size: 30px;
+ }
+ 
  #login-register {
-     color: white;
+     color: #7FFF00;
      font-size: 20px;
-     margin: 5%;
+     /* margin: 5%; */
+     font-family: 'Acme', sans-serif;
+ }
+ 
+ #login-register:hover {
+     color: greenyellow;
+     /*font-size: 20px;
+     margin: 5%; */
      font-family: 'Acme', sans-serif;
  }
  /* ============  LANDING PAGE  ============ */
  
  #titleContainer {
-     margin: 10%;
+     margin-top: 10%;
+     margin: 7%;
      background-color: white;
      opacity: 0.9;
      border-width: 7px;
@@ -32,11 +45,11 @@
  }
  
  #title {
+     font-size: 90px;
      text-align: center;
      text-transform: uppercase;
      text-shadow: 5px 2px #3CC;
      font-family: 'Luckiest Guy', cursive;
-     font-size: 90px;
  }
  
  #descrip {
@@ -45,22 +58,24 @@
      text-align: center;
      font-weight: 900;
  }
- 
- #lpSignIn {
+ /* #lpSignIn {
      text-align: center;
      margin-left: 40%;
-     margin-bottom: 5%;
+     margin-bottom: 5%; 
      font-family: 'Raleway', sans-serif;
-     font-size: 20px;
+     font-size: 20px; 
      border-width: 3px;
+     color: yellow;
  }
  
  #lpSignIn:hover {
      border-width: 5px;
      border-style: ridge;
- }
+     color: greenyellow;   
+ }*/
  
  #baby {
      margin: auto;
-     width: 250px;
+     width: 275px;
  }
+ /* ==================== MEDIA QUERIES ==================  */

@@ -1,43 +1,7 @@
             body {
-                background-image: url('../img/background4.jpg');
+                background-image: url('../img/background2.jpg');
                 background-size: cover;
             }
-            /*
-            #wrapper {
-                width: 960px;
-                margin-left: auto;
-                margin-right: auto;
-                padding-top: 5%;
-            }
-            
-            #articles {
-                display: inline-block;
-                overflow: auto;
-                width: 60%;
-                height: 700px;
-            }
-            
-            #notes {
-                float: right;
-                width: 30%;
-            }
-            
-            textarea,
-            input {
-                display: block;
-                width: 100%;
-                background-color: lightgrey;
-            }
-            
-            input {
-                height: 36px;
-                font-size: 24px;
-            }
-            
-            textarea {
-                height: 200px;
-                font-size: 18px;
-            } */
             /*=============login page========================= */
             
              ::selection {
@@ -150,11 +114,10 @@
                 text-shadow: 5px 2px #3CC;
                 font-family: 'Luckiest Guy', cursive;
                 font-size: 90px;
-                /*
                 background-color: #fff;
-                -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+                /*                -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
                 -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);  */
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
             }
             
             #btnEdit {
@@ -172,3 +135,10 @@
                 margin: auto;
                 margin-top: 3%;
             }
+            /* ------TABLET WIDTH------- */
+            
+            @media screen and (max-width: 768px) {}
+            
+            @media screen and (max-width: 640px) {}
+            
+            @media screen and (max-width: 480px) {}
