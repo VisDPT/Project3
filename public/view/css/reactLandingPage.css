@@ -1,0 +1,66 @@
+ /* ============  NAVBAR  ============  */
+ 
+ #mainNav {
+     background-color: black;
+     color: whitesmoke
+ }
+ 
+ #navTitle {
+     text-transform: uppercase;
+     /* text-shadow: 5px 2px skyblue; */
+     color: white;
+     font-size: 30px;
+     margin: 7%;
+     font-family: 'Acme', sans-serif;
+ }
+ 
+ #login-register {
+     color: white;
+     font-size: 20px;
+     margin: 5%;
+     font-family: 'Acme', sans-serif;
+ }
+ /* ============  LANDING PAGE  ============ */
+ 
+ #titleContainer {
+     margin: 10%;
+     background-color: white;
+     opacity: 0.9;
+     border-width: 7px;
+     border-style: groove;
+     border-color: darkslategrey;
+ }
+ 
+ #title {
+     text-align: center;
+     text-transform: uppercase;
+     text-shadow: 5px 2px skyblue;
+     font-family: 'Luckiest Guy', cursive;
+     font-size: 90px;
+ }
+ 
+ #descrip {
+     font-family: 'Raleway', sans-serif;
+     font-size: 23px;
+     text-align: center;
+     font-weight: 900;
+ }
+ 
+ #lpSignIn {
+     text-align: center;
+     margin-left: 40%;
+     margin-bottom: 5%;
+     font-family: 'Raleway', sans-serif;
+     font-size: 20px;
+     border-width: 3px;
+ }
+ 
+ #lpSignIn:hover {
+     border-width: 5px;
+     border-style: ridge;
+ }
+ 
+ #baby {
+     margin: auto;
+     width: 250px;
+ }
