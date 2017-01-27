@@ -1,5 +1,6 @@
         body {
-            background-image: url(../images/medical.jpg)
+            background-image: url('../img/background2.jpg');
+            background-size: cover;
         }
         
         #wrapper {
@@ -40,12 +41,57 @@
         
         #mainNav {
             background-color: black;
-            color: white
+            color: whitesmoke
+        }
+        
+        #navTitle {
+            text-transform: uppercase;
+            /* text-shadow: 5px 2px skyblue; */
+            font-family: 'Luckiest Guy', cursive;
+            color: white;
+            font-size: 30px;
+            margin: 5%;
+            font-family: 'Fredoka One', cursive;
         }
         /* ====  Landing Page  === */
+        
+        #titleContainer {
+            margin: 10%;
+            background-color: white;
+            opacity: 0.9;
+            border-width: 7px;
+            border-style: groove;
+        }
         
         #title {
             text-align: center;
             text-transform: uppercase;
-            text-shadow: 3px 2px lightskyblue;
+            text-shadow: 5px 2px skyblue;
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 90px;
+        }
+        
+        #descrip {
+            font-family: 'Raleway', sans-serif;
+            font-size: 25px;
+            text-align: center;
+            font-weight: 900;
+        }
+        
+        #lpSignIn {
+            text-align: center;
+            margin-left: 40%;
+            margin-bottom: 5%;
+            font-family: 'Raleway', sans-serif;
+            font-size: 20px;
+            border-width: 3px;
+        }
+        
+        #lpSignIn:hover {
+            border-width: 5px;
+            border-style: ridge;
+        }
+        
+        #baby {
+            margin: auto;
         }

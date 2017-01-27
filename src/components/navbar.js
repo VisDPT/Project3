@@ -19,7 +19,7 @@ render: function(){
                 <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span className="sr-only">Toggle navigation</span> Login/Register <i className="fa fa-bars"></i>
                 </button>
-                <a className="navbar-brand" href="#page-top">COLLABORATE </a>
+                <p className="navbar-brand" href="#page-top" id="navTitle">COLLABORATE </p>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav navbar-right">
