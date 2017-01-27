@@ -21,7 +21,7 @@ render: function(){
     </div>
 
     <ul className="nav navbar-nav navbar-right">
-      <li> <a href="#" id="login-register">Sign Up/ LogIn</a></li>
+      <li> <a href="login.html" id="login-register">Sign Up/ LogIn</a></li>
       
     </ul>
   </div>

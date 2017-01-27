@@ -34,7 +34,7 @@
  #title {
      text-align: center;
      text-transform: uppercase;
-     text-shadow: 5px 2px skyblue;
+     text-shadow: 5px 2px #3CC;
      font-family: 'Luckiest Guy', cursive;
      font-size: 90px;
  }
