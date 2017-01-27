@@ -6,6 +6,10 @@
     background-color: #8ac7d8;
 }
 
+body {
+    background: #3CC;
+}
+
 .container {
     display: -webkit-flex;
     display: flex;
@@ -20,13 +24,12 @@
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-    margin-left: 15%;
 }
 
-#logboxsignup {
+#createAccountBox {
     padding: 10px;
     margin: 50px auto;
-    width: 500px;
+    width: 540px;
     background-color: #fff;
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
@@ -35,7 +38,7 @@
 
 h1 {
     text-align: center;
-    font-size: 100%;
+    font-size: 175%;
     color: #757575;
     font-weight: 300;
 }
@@ -100,4 +103,11 @@ input {
 
 .inputButton:focus {
     outline: none;
+}
+
+
+/* ======== MY EDITS ======= */
+
+#createAccountBox {
+    width: 500 px;
 }
