@@ -43,16 +43,6 @@
             background-color: black;
             color: whitesmoke
         }
-        
-        #navTitle {
-            text-transform: uppercase;
-            /* text-shadow: 5px 2px skyblue; */
-            font-family: 'Luckiest Guy', cursive;
-            color: white;
-            font-size: 30px;
-            margin: 5%;
-            font-family: 'Fredoka One', cursive;
-        }
         /* ====  Landing Page  === */
         
         #titleContainer {

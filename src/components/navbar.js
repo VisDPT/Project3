@@ -13,30 +13,19 @@ render: function(){
 
 <div className="navContainer">
 
-    <nav id="mainNav" className="navbar navbar-default navbar-fixed-top navbar-custom" >
-        <div className="container">
-            <div className="navbar-header page-scroll">
-                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span className="sr-only">Toggle navigation</span> Login/Register <i className="fa fa-bars"></i>
-                </button>
-                <p className="navbar-brand" href="#page-top" id="navTitle">COLLABORATE </p>
-            </div>
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul className="nav navbar-nav navbar-right">
-                    <li className="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li className="page-scroll">
-                        <a href="#portfolio">LogIn/Register</a>
-                    </li>
 
-                </ul>
-            </div>
-     
-        </div>
-    </nav>
+<nav className="navbar navbar-inverse">
+  <div className="container-fluid">
+    <div className="navbar-header">
+      <a className="navbar-brand" href="#">COLLABORATE</a>
+    </div>
 
+    <ul className="nav navbar-nav navbar-right">
+      <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up/LogIn</a></li>
       
+    </ul>
+  </div>
+</nav>
    
    </div> 
       	)
