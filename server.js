@@ -56,9 +56,9 @@ db.once("open", function() {
 
 
 //================ REQUIRING FILES/MODELS =================
-var Provider = require("./models/Provider.js");
-var Document = require("./models/Document.js");
-var Patient = require("./models/Patient.js");
+var Provider = require("/models/Provider.js");
+var Document = require("/models/Document.js");
+var Patient = require("/models/Patient.js");
 
 
 //======================== REACT ========================
