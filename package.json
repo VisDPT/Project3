@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Documentation system",
     "main": "app.js",
+    "engines": { "npm": "4.1.1", "node": "~4.5.0" },
     "scripts": {
         "compile": "webpack",
         "start": "node server.js",

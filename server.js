@@ -42,8 +42,9 @@ mongoose.Promise = Promise;
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/MedDoc");
-//"mongodb://heroku_c4cn3tc7:9g9kql0f983sjdpergjggisea7@ds111489.mlab.com:11489/heroku_c4cn3tc7"
+mongoose.connect("mongodb://heroku_c4cn3tc7:9g9kql0f983sjdpergjggisea7@ds111489.mlab.com:11489/heroku_c4cn3tc7")
+    //mongoose.connect("mongodb://localhost/MedDoc");
+    //""
 var db = mongoose.connection;
 
 // If there's a mongoose error, log it to console
