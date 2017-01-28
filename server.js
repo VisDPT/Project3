@@ -5,6 +5,7 @@
 //==================== SERVER ========================
 var express = require('express');
 var PORT = process.env.PORT || 8000;
+console.log(PORT);
 var app = express();
 
 //body parser
