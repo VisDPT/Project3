@@ -24,10 +24,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 
-//================ REQUIRING FILES/MODELS =================
-var Provider = require("./models/Provider.js");
-var Document = require("./models/Document.js");
-var Patient = require("./models/Patient.js");
+
 
 
 //================ MONGOOSE DEPENDENCIES & CONFIG=================
@@ -57,6 +54,11 @@ db.once("open", function() {
     console.log("Mongoose connection successful.");
 });
 
+
+//================ REQUIRING FILES/MODELS =================
+var Provider = require("./models/Provider.js");
+var Document = require("./models/Document.js");
+var Patient = require("./models/Patient.js");
 
 
 //======================== REACT ========================
