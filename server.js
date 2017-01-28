@@ -40,7 +40,7 @@ mongoose.Promise = Promise;
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_c4cn3tc7:9g9kql0f983sjdpergjggisea7@ds111489.mlab.com:11489/heroku_c4cn3tc7");
+mongoose.connect("mongodb://heroku_36xjnckc:ck5s2io5045bf3r2qfcf6lfgp6@ds135519.mlab.com:35519/heroku_36xjnckc");
 //mongoose.connect("mongodb://localhost/MedDoc");
 //""
 var db = mongoose.connection;
@@ -57,9 +57,9 @@ db.once("open", function() {
 
 
 //================ REQUIRING FILES/MODELS =================
-var Provider = require("/models/Provider.js");
-var Document = require("/models/Document.js");
-var Patient = require("/models/Patient.js");
+var Provider = require("./models/Provider.js");
+var Document = require("./models/Document.js");
+var Patient = require("./models/Patient.js");
 
 
 //======================== REACT ========================
