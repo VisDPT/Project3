@@ -1,56 +1,47 @@
-//npm install --save @blueprintjs/core
+//=========================================================
+//                 DEPENDENCIES & SET UP 
+//=========================================================
 
-
-
-//==================== SERVER ========================
+var path = require('path');
+//==================== SERVER ============================
 var express = require('express');
 var PORT = process.env.PORT || 8000;
 console.log(PORT);
 var app = express();
 
-//body parser
+//================= MORGAN & BODY PARSER ================
 var bodyParser = require('body-parser')
 var logger = require("morgan"); //writes logs everything that has happened to the log file; records everything that happened while server running
 // Our newest addition to the dependency family
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// Make public a static dir
-app.use(express.static("public"));
-
-
+//app.use(express.static("public"));
 
 
 
 //================ MONGOOSE DEPENDENCIES & CONFIG=================
-
+var mongo = require('mongodb');
 var mongoose = require("mongoose");
-// Mongoose mpromise deprecated - use bluebird promises
 var Promise = require("bluebird");
-
 mongoose.Promise = Promise;
 
-// Make public a static dir
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_36xjnckc:ck5s2io5045bf3r2qfcf6lfgp6@ds135519.mlab.com:35519/heroku_36xjnckc");
-//mongoose.connect("mongodb://localhost/MedDoc");
-//""
+//mongoose.connect("mongodb://heroku_36xjnckc:ck5s2io5045bf3r2qfcf6lfgp6@ds135519.mlab.com:35519/heroku_36xjnckc");
+mongoose.connect("mongodb://localhost/MedDoc");
 var db = mongoose.connection;
 
-// If there's a mongoose error, log it to console
 db.on("error", function(error) {
     console.log("Mongoose Error: ", error);
 });
 
-// Once we "open" a connection to mongoose, tell the console we're in
 db.once("open", function() {
     console.log("Mongoose connection successful.");
 });
@@ -60,6 +51,57 @@ db.once("open", function() {
 var Provider = require("./models/Provider.js");
 var Document = require("./models/Document.js");
 var Patient = require("./models/Patient.js");
+
+
+//==================== USER AUTH ==================
+var cookieParser = require('cookie-parser');
+var expressValidator = require('express-validator');
+var flash = require('connect-flash');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+
+
+// Express Session
+app.use(session({
+    secret: 'secret',
+    saveUninitialized: true,
+    resave: true
+}));
+
+// Passport init
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Express Validator
+app.use(expressValidator({
+    errorFormatter: function(param, msg, value) {
+        var namespace = param.split('.'),
+            root = namespace.shift(),
+            formParam = root;
+
+        while (namespace.length) {
+            formParam += '[' + namespace.shift() + ']';
+        }
+        return {
+            param: formParam,
+            msg: msg,
+            value: value
+        };
+    }
+}));
+
+// Connect Flash
+app.use(flash());
+
+// Global Vars
+app.use(function(req, res, next) {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
+    next();
+});
 
 
 //======================== REACT ========================
@@ -89,6 +131,17 @@ require("babel-core").transform("code", {
 });
 
 
+//================= HANDLEBARS ===================
+var exphbs = require('express-handlebars');
+//app.set('views', path.join(__dirname, 'views'));
+//app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+//app.set('view engine', 'express-handlebars');
+
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
+app.set('view engine', 'hbs');
+
+
+
 
 //=========================================================
 //                        ROUTES 
@@ -97,7 +150,7 @@ require("babel-core").transform("code", {
 //*********** HOME PAGE with logo ***********
 app.get('/', function(req, res) {
     //    res.send('HOME PAGE with logo');
-    res.sendFile(__dirname + "/public/view/index.html");
+    res.sendFile(__dirname + "/public/views/index.html");
     /*
 // THIS SEARCH WORKS!
         Provider.find({})
@@ -112,11 +165,17 @@ app.get('/', function(req, res) {
 });
 
 //*********** LOG IN **************
-app.get('/login/', function(req, res) {
-    res.send('LOGIN PAGE');
+
+app.get('/login', function(req, res) {
+    res.render('loginRegister');
 });
 
 //********** Dashoard page after login **************
+
+app.get('/dashboard', function(req, res) {
+    res.render('providerDashboard');
+});
+
 //(which displays list of ALL patients;)
 app.get('/user/home/', function(req, res) {
     //res.send('YOU LOGGED IN! Here is your dashboard ');
@@ -141,7 +200,6 @@ app.get('/user/:documentid/', function(req, res) {
     res.send('GETS SPECIFIC PT DOC!!');
 });
 
-
 //********** NEW DOC  **************
 app.post('/user/newdoc/', function(req, res) {
     //res.send('CREATE NEW DOC!!!');
@@ -158,7 +216,6 @@ app.post('/user/newdoc/', function(req, res) {
     newDocument.dateOfBirth = req.body.dateOfBirth;
     newDocument.age = req.body.age;
     newDocument.chronologicalAge = req.body.chronologicalAge;
-
 
     //  newDocument.phone = req.body.phone;
     //   newDocument.address = req.body.address;
@@ -187,7 +244,6 @@ app.post('/user/newdoc/', function(req, res) {
         }
     })
 
-
     var newPatient = new Patient();
 
     newPatient.patientID = req.body.patientID;
@@ -208,12 +264,10 @@ app.post('/user/newdoc/', function(req, res) {
             res.send(patient);
         }
     })
-
-
-
 });
 
 
+/* PHASE 2 ROUTES
 //********** DELETES PT DOC  **************
 app.delete('/user/:documentid/', function(req, res) {
     res.send('DELETES SPECIFIC PT DOC!!');
@@ -223,8 +277,7 @@ app.delete('/user/:documentid/', function(req, res) {
 app.put('/user/:documentid/', function(req, res) {
     res.send('UPDATES SPECIFIC PT DOC!!');
 });
-
-
+*/
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
