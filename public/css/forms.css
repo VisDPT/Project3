@@ -1,213 +1,329 @@
-            body {
-                background-image: url('../img/background4.jpg');
-                background-size: cover;
-            }
-            /*=============login page========================= */
-            
-             ::selection {
-                background-color: #b5e2e7;
-            }
-            
-             ::-moz-selection {
-                background-color: #8ac7d8;
-            }
-            
-            .container {
-                display: -webkit-flex;
-                display: flex;
-                height: 100%;
-            }
-            
-            .logbox {
-                padding: 10px;
-                margin: 50px auto;
-                width: 340px;
-                background-color: #fff;
-                opacity: 0.9;
-                -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-                -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-                border-width: 3px;
-                border-style: groove;
-                border-color: black;
-                font-family: 'Acme', sans-serif;
-            }
-            
-            #createAccountBox {
-                width: 540px;
-            }
-            
-            h1 {
-                text-align: center;
-                font-size: 175%;
-                color: #757575;
-                font-weight: 300;
-            }
-            
-            h1,
-            input {
-                font-family: 'Acme', sans-serif;
-            }
-            
-            .input {
-                width: 75%;
-                height: 50px;
-                display: block;
-                margin: 0 auto 15px;
-                padding: 0 15px;
-                border: 2px solid #ebebeb;
-                border-bottom: 2px solid #ebebeb;
-                background-color: whitesmoke;
-            }
-            
-            .input:focus {
-                outline: none;
-                border-bottom-color: #3CC !important;
-            }
-            
-            .input:hover {
-                border-bottom-color: #dcdcdc;
-            }
-            
-            .input:invalid {
-                box-shadow: none;
-            }
-            
-            .pass:-webkit-autofill {
-                -webkit-box-shadow: 0 0 0 1000px white inset;
-            }
-            
-            .inputButton {
-                position: relative;
-                width: 85%;
-                height: 50px;
-                display: block;
-                margin: 30px auto 30px;
-                color: white;
-                background-color: #3CC;
-                border: none;
-                -webkit-box-shadow: 0 5px 0 #2CADAD;
-                -moz-box-shadow: 0 5px 0 #2CADAD;
-                box-shadow: 0 5px 0 #2CADAD;
-            }
-            
-            .inputButton:hover {
-                top: 2px;
-                -webkit-box-shadow: 0 3px 0 #2CADAD;
-                -moz-box-shadow: 0 3px 0 #2CADAD;
-                box-shadow: 0 3px 0 #2CADAD;
-            }
-            
-            .inputButton:active {
-                top: 5px;
-                box-shadow: none;
-            }
-            
-            .inputButton:focus {
-                outline: none;
-            }
-            /* ======== MY EDITS ======= */
-            
-            #title {
-                text-align: center;
-                text-transform: uppercase;
-                text-shadow: 5px 2px #3CC;
-                font-family: 'Luckiest Guy', cursive;
-                font-size: 90px;
-                /*                background-color: #fff;*/
-                color: black;
-                /*                -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+/*=============================================
+REACT LANDING PAGE
+===============================================*/
+
+
+/* ============  NAVBAR  ============  */
+
+#mainNav {
+    background-color: black;
+    color: whitesmoke
+}
+
+#navTitle {
+    text-transform: uppercase;
+    /* text-shadow: 5px 2px skyblue; */
+    color: white;
+    font-size: 30px;
+    /*
+     margin: 7%;*/
+    font-family: 'Acme', sans-serif;
+}
+
+#navTitle:hover {
+    font-size: 30px;
+}
+
+#login-register {
+    font-size: 18px;
+    font-family: 'Acme', sans-serif;
+    border: 5px solid white;
+    border-top-color: yellow;
+    border-left-color: pink;
+    border-right-color: blue;
+    border-bottom-color: green;
+    color: #00FFFF;
+}
+
+#login-register:hover {
+    /*font-size: 20px;
+     margin: 5%; */
+    font-family: 'Acme', sans-serif;
+    border: 5px solid whitesmoke;
+    border-bottom-color: yellow;
+    border-right-color: pink;
+    border-left-color: blue;
+    border-top-color: green;
+    background-color: #191919;
+}
+
+
+/* ============  LANDING PAGE  ============ */
+
+#titleContainer {
+    margin-top: 10%;
+    margin: 7%;
+    background-color: white;
+    opacity: 0.9;
+    border-width: 7px;
+    border-style: groove;
+    border-color: darkslategrey;
+}
+
+#title {
+    font-size: 90px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 5px 2px #3CC;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+#descrip {
+    font-family: 'Raleway', sans-serif;
+    font-size: 23px;
+    text-align: center;
+    font-weight: 900;
+}
+
+
+/* #lpSignIn {
+     text-align: center;
+     margin-left: 40%;
+     margin-bottom: 5%; 
+     font-family: 'Raleway', sans-serif;
+     font-size: 20px; 
+     border-width: 3px;
+     color: yellow;
+ }
+ 
+ #lpSignIn:hover {
+     border-width: 5px;
+     border-style: ridge;
+     color: greenyellow;   
+ }*/
+
+#baby {
+    margin: auto;
+    width: 275px;
+}
+
+
+/*=============================================
+CSS
+===============================================*/
+
+body {
+    background-image: url('../img/background4.jpg');
+    background-size: cover;
+}
+
+
+/*=============login page========================= */
+
+ ::selection {
+    background-color: #b5e2e7;
+}
+
+ ::-moz-selection {
+    background-color: #8ac7d8;
+}
+
+.container {
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+}
+
+.logbox {
+    padding: 10px;
+    margin: 50px auto;
+    width: 340px;
+    background-color: #fff;
+    opacity: 0.9;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    border-width: 3px;
+    border-style: groove;
+    border-color: black;
+    font-family: 'Acme', sans-serif;
+}
+
+#createAccountBox {
+    width: 540px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 175%;
+    color: #757575;
+    font-weight: 300;
+}
+
+h1,
+input {
+    font-family: 'Acme', sans-serif;
+}
+
+.input {
+    width: 75%;
+    height: 50px;
+    display: block;
+    margin: 0 auto 15px;
+    padding: 0 15px;
+    border: 2px solid #ebebeb;
+    border-bottom: 2px solid #ebebeb;
+    background-color: whitesmoke;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom-color: #3CC !important;
+}
+
+.input:hover {
+    border-bottom-color: #dcdcdc;
+}
+
+.input:invalid {
+    box-shadow: none;
+}
+
+.pass:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+.inputButton {
+    position: relative;
+    width: 85%;
+    height: 50px;
+    display: block;
+    margin: 30px auto 30px;
+    color: white;
+    background-color: #3CC;
+    border: none;
+    -webkit-box-shadow: 0 5px 0 #2CADAD;
+    -moz-box-shadow: 0 5px 0 #2CADAD;
+    box-shadow: 0 5px 0 #2CADAD;
+}
+
+.inputButton:hover {
+    top: 2px;
+    -webkit-box-shadow: 0 3px 0 #2CADAD;
+    -moz-box-shadow: 0 3px 0 #2CADAD;
+    box-shadow: 0 3px 0 #2CADAD;
+}
+
+.inputButton:active {
+    top: 5px;
+    box-shadow: none;
+}
+
+.inputButton:focus {
+    outline: none;
+}
+
+
+/* ======== MY EDITS ======= */
+
+#title {
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 5px 2px #3CC;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 90px;
+    /*                background-color: #fff;*/
+    color: black;
+    /*                -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
                 -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
                 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
-            }
-            
-            #btnEdit {
-                font-size: 20px;
-                letter-spacing: 2px;
-            }
-            
-            #headerBanner {
-                width: 95%;
-                margin: auto;
-                margin-top: 3%;
-            }
-            /* ============  NAVBAR  ============  */
-            
-            #mainNav {
-                background-color: black;
-                color: whitesmoke
-            }
-            
-            #navTitle {
-                text-transform: uppercase;
-                /* text-shadow: 5px 2px skyblue; */
-                color: white;
-                font-size: 30px;
-                /*
+}
+
+#btnEdit {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+#headerBanner {
+    width: 95%;
+    margin: auto;
+    margin-top: 3%;
+}
+
+
+/* ============  NAVBAR  ============  */
+
+#mainNav {
+    background-color: black;
+    color: whitesmoke
+}
+
+#navTitle {
+    text-transform: uppercase;
+    /* text-shadow: 5px 2px skyblue; */
+    color: white;
+    font-size: 30px;
+    /*
      margin: 7%;*/
-                font-family: 'Acme', sans-serif;
-            }
-            
-            #navTitle:hover {
-                font-size: 30px;
-            }
-            
-            #login-register {
-                font-size: 18px;
-                font-family: 'Acme', sans-serif;
-                border: 5px solid white;
-                border-top-color: yellow;
-                border-left-color: pink;
-                border-right-color: blue;
-                border-bottom-color: green;
-                color: #00FFFF;
-            }
-            
-            #login-register:hover {
-                /*font-size: 20px;
+    font-family: 'Acme', sans-serif;
+}
+
+#navTitle:hover {
+    font-size: 30px;
+}
+
+#login-register {
+    font-size: 18px;
+    font-family: 'Acme', sans-serif;
+    border: 5px solid white;
+    border-top-color: yellow;
+    border-left-color: pink;
+    border-right-color: blue;
+    border-bottom-color: green;
+    color: #00FFFF;
+}
+
+#login-register:hover {
+    /*font-size: 20px;
      margin: 5%; */
-                font-family: 'Acme', sans-serif;
-                border: 5px solid whitesmoke;
-                border-bottom-color: yellow;
-                border-right-color: pink;
-                border-left-color: blue;
-                border-top-color: green;
-                background-color: #191919;
-            }
-            /* Provider Dashboard*/
-            
-            #title {
-                margin-top: 9%;
-                text-align: center;
-                text-transform: uppercase;
-                color: black;
-                text-shadow: 5px 2px #3CC;
-                font-family: 'Luckiest Guy', cursive;
-                font-size: 120px;
-            }
-            /* Your Dashboard */
-            
-            #subtitle {
-                color: black;
-                font-family: 'Raleway', sans-serif;
-                text-align: center;
-                text-decoration: underline;
-            }
-            
-            .boxColor {
-                background-color: white;
-                opacity: 0.9;
-                border-width: 5px;
-                border-style: groove;
-                border-color: darkslategrey;
-                font-weight: 900;
-                height: 300px;
-                overflow: scroll;
-            }
-            /* ------TABLET WIDTH------- */
-            
-            @media screen and (max-width: 768px) {}
-            
-            @media screen and (max-width: 640px) {}
-            
-            @media screen and (max-width: 480px) {}
+    font-family: 'Acme', sans-serif;
+    border: 5px solid whitesmoke;
+    border-bottom-color: yellow;
+    border-right-color: pink;
+    border-left-color: blue;
+    border-top-color: green;
+    background-color: #191919;
+}
+
+
+/* Provider Dashboard*/
+
+#title {
+    margin-top: 9%;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    text-shadow: 5px 2px #3CC;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 120px;
+}
+
+
+/* Your Dashboard */
+
+#subtitle {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.boxColor {
+    background-color: white;
+    opacity: 0.9;
+    border-width: 5px;
+    border-style: groove;
+    border-color: darkslategrey;
+    font-weight: 900;
+    height: 300px;
+    overflow: scroll;
+}
+
+
+/* ------TABLET WIDTH------- */
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 640px) {}
+
+@media screen and (max-width: 480px) {}

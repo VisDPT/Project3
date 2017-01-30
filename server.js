@@ -52,6 +52,7 @@ var Provider = require("./models/Provider.js");
 var Document = require("./models/Document.js");
 var Patient = require("./models/Patient.js");
 
+//var users = require('./controllerRoutes/users');
 
 //==================== USER AUTH ==================
 var cookieParser = require('cookie-parser');
@@ -146,6 +147,8 @@ app.set('view engine', 'hbs');
 //=========================================================
 //                        ROUTES 
 //=========================================================
+//var users = require('./ControllerRoutes/users.js')
+
 //app.use(express.static(__dirname + '/www'));
 //*********** HOME PAGE with logo ***********
 app.get('/', function(req, res) {
@@ -164,11 +167,22 @@ app.get('/', function(req, res) {
             })   */
 });
 
-//*********** LOG IN **************
+//*********** LOG IN PG**************
 
 app.get('/login', function(req, res) {
-    res.render('loginRegister');
+    res.render('login');
 });
+
+app.get('/register', function(req, res) {
+    res.render('register');
+});
+app.post('/register', function(req, res) {
+
+});
+
+
+//app.use('/users', users);
+
 
 //********** Dashoard page after login **************
 

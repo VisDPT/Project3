@@ -31,7 +31,10 @@ render: function(){
                         <a href="#page-top"></a>
                     </li>
                     <li className="page-scroll">
-                        <a href="/login" id="login-register">Sign Up/ LogIn</a>
+                        <a href="/login" id="login-register">LogIn</a>
+                    </li>
+                    <li className="page-scroll">
+                        <a href="/register" id="login-register">Sign Up</a>
                     </li>
                 </ul>
             </div>

@@ -1,10 +1,14 @@
 var express = require('express');
-var router = express.Router();
+var app = express();
 
 //*********** LOG IN **************
 
 router.get('/login', function(req, res) {
-    res.render('loginRegister');
+    res.render('login');
+});
+
+router.get('/register', function(req, res) {
+    res.render('register');
 });
 
 module.exports = router;
